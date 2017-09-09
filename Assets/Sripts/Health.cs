@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
     public enum ArmorType { stone, steel, energetic };
+    [SerializeField]
     ArmorType armType;
+    [SerializeField]
     float armor;
+    [SerializeField]
     float hp;
 
     public void GetDmg(float dmg, Damage.Type dmgType)
@@ -22,16 +25,9 @@ public class Health : MonoBehaviour {
         return dmg;
     }
     public void Death()
-    { }
+    {
+        Destroy(gameObject);
+    }
   
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
