@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionAvoidance : MonoBehaviour {
+public class CollisionAvoidance : MonoBehaviour
+{
     public float repellAcceleration;
     Vector3 radius;
     Vector2 random;
+
     private void OnTriggerStay(Collider other)
     {
         if(other.transform != transform.parent)
@@ -18,7 +20,6 @@ public class CollisionAvoidance : MonoBehaviour {
                 {
                     random = Random.insideUnitCircle;
                     radius = new Vector3(random.x, 0, random.y);
-                    
                 }
                 walker.ApplyAcceleration((repellAcceleration / (radius.sqrMagnitude*radius.magnitude)) * radius);
             }

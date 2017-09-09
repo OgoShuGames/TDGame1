@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkAlongTheRoad : MonoBehaviour {
-
+public class WalkAlongTheRoad : MonoBehaviour
+{
     public Transform target { get; private set; }
 
     [SerializeField]
@@ -14,15 +14,14 @@ public class WalkAlongTheRoad : MonoBehaviour {
     int pathIndex = -1;
     Vector3 force;
     Rigidbody rigBody;
-     
-	// Use this for initialization
-	void Start ()
+
+	void Start()
     {
         rigBody = GetComponent<Rigidbody>();
     }
 	
-	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate()
+    {
         if (target != null)
         {
             force = (target.position - transform.position).normalized * forceMagnitude;

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnTrigger : MonoBehaviour {
+public class TurnTrigger : MonoBehaviour
+{
     private void OnTriggerEnter(Collider other)
     {
         var walker = other.GetComponent<WalkAlongTheRoad>();

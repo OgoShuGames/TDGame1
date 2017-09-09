@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnTrigger : MonoBehaviour {
+public class SpawnTrigger : MonoBehaviour
+{
     public List<Transform> path;
 
     private void OnTriggerEnter(Collider other)
