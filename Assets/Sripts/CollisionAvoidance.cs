@@ -6,7 +6,6 @@ public class CollisionAvoidance : MonoBehaviour
 {
     public float repellAcceleration;
     Vector3 radius;
-    Vector2 random;
 
     private void OnTriggerStay(Collider other)
     {
@@ -18,7 +17,7 @@ public class CollisionAvoidance : MonoBehaviour
                 radius = (transform.position - other.transform.position);
                 if(radius == Vector3.zero)
                 {
-                    random = Random.insideUnitCircle;
+                    Vector3 random = Random.insideUnitCircle;
                     radius = new Vector3(random.x, 0, random.y);
                 }
                 walker.ApplyAcceleration((repellAcceleration / (radius.sqrMagnitude*radius.magnitude)) * radius);

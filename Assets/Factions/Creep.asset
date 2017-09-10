@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad9442badf36c740ae1cd777ed4a5bb, type: 3}
+  m_Name: Creep
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 11400000, guid: bbccd7311c29abc4385b201bf580274e, type: 2}
+  - {fileID: 11400000, guid: 155d3d4541bbd904283582f5d774ab49, type: 2}
+  - {fileID: 11400000, guid: 009745f534c91e64096490feb577715c, type: 2}
+  - {fileID: 11400000, guid: 92b6967cf1b0a8c4cb76b4c580e9aee4, type: 2}
