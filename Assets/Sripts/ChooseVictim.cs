@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ChooseVictim : MonoBehaviour
 {
-    public Health victim;// { get; private set; }
+    public Unit victim { get; private set; }
     [SerializeField]
-    List<Health> potentialVictim = new List<Health>();
-    Health newCandidate;
-    
+    List<Unit> potentialVictim = new List<Unit>();
+    Unit newCandidate;
+    List<Faction> enemyFactions;
+
     private void OnTriggerEnter(Collider other)
     {
-        newCandidate = other.GetComponent<Health>();
-        if (newCandidate != null)
+        newCandidate = other.GetComponent<Unit>();
+        if (newCandidate != null && (enemyFactions.Contains(newCandidate.faction)))
         {
             potentialVictim.Add(newCandidate);
         }
@@ -20,7 +21,7 @@ public class ChooseVictim : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        newCandidate = other.GetComponent<Health>();
+        newCandidate = other.GetComponent<Unit>();
         if (newCandidate != null)
         {
             potentialVictim.Remove(newCandidate);
@@ -41,14 +42,12 @@ public class ChooseVictim : MonoBehaviour
         }
         if (potentialVictim.Count > 0)
         {
-            
             for (int i = 1; i < potentialVictim.Count; i++)
             {
                 if(potentialVictim[i] == null)
                 {
                     potentialVictim.RemoveAt(i--);
-                } else
-                if ((victim.transform.position - transform.position).sqrMagnitude >
+                } else if ((victim.transform.position - transform.position).sqrMagnitude >
                     (potentialVictim[i].transform.position - transform.position).sqrMagnitude)
                 {
                     victim = potentialVictim[i];
@@ -67,5 +66,10 @@ public class ChooseVictim : MonoBehaviour
         {
             Choose();
         }
+    }
+
+    private void Start()
+    {
+        enemyFactions = GetComponentInParent<Unit>().faction.enemies;
     }
 }

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114966687610906280}
   - component: {fileID: 54839077419771434}
   - component: {fileID: 114121069338738506}
+  - component: {fileID: 114041287818958966}
   m_Layer: 8
   m_Name: Creep
   m_TagString: Untagged
@@ -142,6 +143,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repellAcceleration: -0.5
+--- !u!114 &114041287818958966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684551512462288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa8fa4b3d90eae449feb8de0e7d2bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: {fileID: 11400000, guid: ccdb12318d335f74a9c4882ee1b4324c, type: 2}
 --- !u!114 &114121069338738506
 MonoBehaviour:
   m_ObjectHideFlags: 1

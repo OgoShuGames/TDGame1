@@ -13,11 +13,13 @@ public class GunAI : MonoBehaviour
     [SerializeField]
     Damage damager;
     [SerializeField]
-    float reloadTime, angleTollerance;
+    float reloadTime;
 
+    float angleTollerance;
     float reloadTimer;
     float angle;
-    bool aimed, reloaded;
+    bool aimed;
+    bool reloaded;
 
     public void FixedUpdate()
     {
@@ -25,7 +27,7 @@ public class GunAI : MonoBehaviour
         aimed = (chooser.victim != null && looker.LookAt(chooser.victim.transform) < angleTollerance);
         if (aimed && reloaded)
         {
-            shooter.Shoot(damager, chooser.victim);
+            shooter.Shoot(damager, chooser.victim.health);
             reloadTimer = reloadTime;
         }
     }
