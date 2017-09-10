@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunAI : MonoBehaviour {
+public class GunAI : MonoBehaviour
+{
     [SerializeField]
     ChooseVictim chooser;
     [SerializeField]
@@ -27,7 +28,5 @@ public class GunAI : MonoBehaviour {
             shooter.Shoot(damager, chooser.victim);
             reloadTimer = reloadTime;
         }
-
-
     }
 }
