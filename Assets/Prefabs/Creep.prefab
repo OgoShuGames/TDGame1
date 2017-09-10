@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: {fileID: 11400000, guid: ccdb12318d335f74a9c4882ee1b4324c, type: 2}
+  health: {fileID: 114121069338738506}
 --- !u!114 &114121069338738506
 MonoBehaviour:
   m_ObjectHideFlags: 1

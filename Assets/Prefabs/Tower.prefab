@@ -555,6 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: {fileID: 0}
+  health: {fileID: 114411124621034330}
 --- !u!114 &114650583759590782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,7 +584,6 @@ MonoBehaviour:
   shooter: {fileID: 114596616316092388}
   damager: {fileID: 114797362765889976}
   reloadTime: 1
-  angleTollerance: 0.1
 --- !u!114 &114797362765889976
 MonoBehaviour:
   m_ObjectHideFlags: 1
