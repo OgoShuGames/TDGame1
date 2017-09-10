@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour {
-    public enum ArmorType { stone, steel, energetic };
+public class Health : MonoBehaviour
+{
+    public enum ArmorType
+    {
+        stone,
+        steel,
+        energetic
+    };
 
     public UnityEvent death;
-
     [SerializeField]
     ArmorType armType;
     [SerializeField]
@@ -27,16 +32,15 @@ public class Health : MonoBehaviour {
             death.Invoke();
         else
             hp = newhp;
-        
     }
+
     public float CalculateDmg(float dmg, Damage.Type dmgType, float armor, ArmorType armType)
     {
         return dmg;
     }
+
     public void Death()
     {
         Destroy(gameObject);
     }
-  
-
 }

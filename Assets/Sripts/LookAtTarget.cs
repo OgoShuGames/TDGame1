@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAtTarget : MonoBehaviour {
+public class LookAtTarget : MonoBehaviour
+{
     [SerializeField]
     float angularSpeed = 90;
-
     Quaternion lookAtTarget;
 
     public float LookAt(Transform target)
