@@ -16,7 +16,7 @@ public class Damage : MonoBehaviour
     [SerializeField]
     float dmg;
 
-    public void Hit(Health H)
+    public void Hit(DamageController H)
     {
         H.GetDmg(dmg, dmgType); 
     }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Shot : MonoBehaviour
 {
-    public abstract void Shoot(Damage shooter, Health victim);
+    public abstract void Shoot(Damage shooter, DamageController victim);
 }

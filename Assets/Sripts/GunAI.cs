@@ -27,7 +27,7 @@ public class GunAI : MonoBehaviour
         aimed = (chooser.victim != null && looker.LookAt(chooser.victim.transform) < angleTollerance);
         if (aimed && reloaded)
         {
-            shooter.Shoot(damager, chooser.victim.health);
+            shooter.Shoot(damager, chooser.victim.GetComponent<DamageController>());
             reloadTimer = reloadTime;
         }
     }

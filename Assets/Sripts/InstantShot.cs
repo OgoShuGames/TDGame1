@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InstantShot : Shot
 {
-    public override void Shoot(Damage shooter, Health victim)
+    public override void Shoot(Damage shooter, DamageController victim)
     {
         shooter.Hit(victim);
     }

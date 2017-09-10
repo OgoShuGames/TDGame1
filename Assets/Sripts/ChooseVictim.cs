@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ChooseVictim : MonoBehaviour
 {
-    public Unit victim { get; private set; }
+    public BelongTo victim { get; private set; }
     [SerializeField]
-    List<Unit> potentialVictim = new List<Unit>();
-    Unit newCandidate;
+    List<BelongTo> potentialVictim = new List<BelongTo>();
+    BelongTo newCandidate;
     List<Faction> enemyFactions;
 
     private void OnTriggerEnter(Collider other)
     {
-        newCandidate = other.GetComponent<Unit>();
+        newCandidate = other.GetComponent<BelongTo>();
         if (newCandidate != null && (enemyFactions.Contains(newCandidate.faction)))
         {
             potentialVictim.Add(newCandidate);
@@ -21,7 +21,7 @@ public class ChooseVictim : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        newCandidate = other.GetComponent<Unit>();
+        newCandidate = other.GetComponent<BelongTo>();
         if (newCandidate != null)
         {
             potentialVictim.Remove(newCandidate);
@@ -70,6 +70,6 @@ public class ChooseVictim : MonoBehaviour
 
     private void Start()
     {
-        enemyFactions = GetComponentInParent<Unit>().faction.enemies;
+        enemyFactions = GetComponentInParent<BelongTo>().faction.enemies;
     }
 }

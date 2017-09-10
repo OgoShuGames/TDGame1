@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class BelongTo : MonoBehaviour
 {
     public Faction faction;
-    public Health health;
 }
