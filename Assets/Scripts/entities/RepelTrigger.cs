@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionAvoidance : MonoBehaviour
+public class RepelTrigger : MonoBehaviour
 {
     public float repellAcceleration;
     Vector3 radius;
