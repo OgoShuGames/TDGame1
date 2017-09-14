@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TowerBuilder : MonoBehaviour
 {
-    public long money = 5000;
+    public long money = 5000; // TODO: move to Faction
     public GameObject tower;
-    
+
     void Update()
     {
         if (!Input.GetMouseButtonDown(0))
@@ -15,7 +15,7 @@ public class TowerBuilder : MonoBehaviour
         if (money < price)
             return;
         RaycastHit hit;
-        if (!Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1))
+        if (!Ground.coll.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
             return;
         money -= price;
         Instantiate(tower, hit.point, Quaternion.identity);
